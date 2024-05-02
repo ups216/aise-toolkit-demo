@@ -4,7 +4,7 @@ from click.testing import CliRunner
 import os
 
 @click.group()
-@click.version_option(version='aise, 0.1.1')
+@click.version_option(version='0.3')
 def cli():
     "A set of tools to assist developer to use AI"
 
