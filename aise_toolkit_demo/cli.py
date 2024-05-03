@@ -6,7 +6,7 @@ import aise_toolkit_demo
 from aise_toolkit_demo.app import app_utiles
 
 @click.group()
-@click.version_option(version='0.4')
+@click.version_option(version='0.5')
 def cli():
     "A set of tools to assist developer to use AI"
 
