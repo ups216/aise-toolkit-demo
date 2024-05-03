@@ -6,7 +6,7 @@ import aise_toolkit_demo
 from aise_toolkit_demo.app import app_utiles
 
 @click.group()
-@click.version_option(version='0.3')
+@click.version_option(version='0.4')
 def cli():
     "A set of tools to assist developer to use AI"
 
@@ -25,7 +25,7 @@ def first_command(example, option):
     click.echo(f"Here is some output: {aise_toolkit_demo.calculate()}")
     click.echo(f"Here is some output: {app_utiles.app_get_message()}")
     click.echo(f"Here is some output: {app_utiles.app_calculate()}")
-    
+
 @cli.command(name="start_app")
 def start_app():
     """Start the Streamlit app from ./app/app.py"""
