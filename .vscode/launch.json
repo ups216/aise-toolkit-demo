@@ -5,11 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python 调试程序: 模块",
+            "name": "Python Debug Module: command",
             "type": "debugpy",
             "request": "launch",
             "module": "aise_toolkit_demo",
             "args": ["command", "abc"]
+        },
+        {
+            "name": "Python Debug Module: start_app",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "aise_toolkit_demo",
+            "args": ["start_app"]
         }
     ]
 }

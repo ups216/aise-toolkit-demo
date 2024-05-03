@@ -35,8 +35,6 @@ def first_command(example, option):
 @cli.command(name="start_app")
 def start_app():
     """Start the Streamlit app from ./app/app.py"""
-    # Path to your Streamlit script
-
     # get the current directory
     current_dir = os.getcwd()
     click.echo(current_dir)
