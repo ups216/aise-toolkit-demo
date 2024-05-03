@@ -7,10 +7,3 @@ def test_version():
         result = runner.invoke(cli, ["--version"])
         assert result.exit_code == 0
         assert result.output.startswith("cli, version ")
-
-def test_first_command():
-    runner = CliRunner()
-    with runner.isolated_filesystem():
-        result = runner.invoke(cli, ["command", "example", "-o", "option"])
-        assert result.exit_code == 0
-        assert result.output == "Here is some output\n"
