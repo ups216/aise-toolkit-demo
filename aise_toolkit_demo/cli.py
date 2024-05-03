@@ -25,6 +25,12 @@ def first_command(example, option):
     click.echo(f"Here is some output: {aise_toolkit_demo.calculate()}")
     click.echo(f"Here is some output: {app_utiles.app_get_message()}")
     click.echo(f"Here is some output: {app_utiles.app_calculate()}")
+    click.echo(f"Runing from PyInstaller bundle: {aise_toolkit_demo.is_running_in_pyinstaller_bundle()}")
+    # if running from PyInstaller bundle, print the temp folder
+    if aise_toolkit_demo.is_running_in_pyinstaller_bundle():
+        click.echo(f"Temp folder: {aise_toolkit_demo.get_temp_folder()}")
+    # wait for user input
+    input("Press Enter to continue...")
 
 @cli.command(name="start_app")
 def start_app():
@@ -36,7 +42,10 @@ def start_app():
     click.echo(current_dir)
 
     # Path to the Streamlit app
-    app_path = os.path.join(current_dir, "aise_toolkit_demo", "app", "app.py")
+    if aise_toolkit_demo.is_running_in_pyinstaller_bundle():
+        app_path = os.path.join(aise_toolkit_demo.get_temp_folder(), "app", "app.py")
+    else:
+        app_path = os.path.join(current_dir, "aise_toolkit_demo", "app", "app.py")
     click.echo(app_path)
 
     # Run the Streamlit app

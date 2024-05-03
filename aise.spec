@@ -5,7 +5,11 @@ a = Analysis(
     ['aise_toolkit_demo\\cli.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[
+        (
+            r'aise_toolkit_demo/app/*', 'app'
+        )
+    ],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

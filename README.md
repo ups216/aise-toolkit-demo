@@ -40,7 +40,12 @@ To run the tests:
 pytest
 ```
 
+
 ```shell
+# use .spec file 
+pyinstaller aise.spec
+
+# do not run these if .spec file is already there.
 # create a one-folder bundle
 pyinstaller --name aise --noconfirm --log-level=WARN --onedir --nowindow ./aise_toolkit_demo/cli.py
 # create a single-file bundle
