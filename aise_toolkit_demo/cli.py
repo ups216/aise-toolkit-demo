@@ -2,6 +2,8 @@ import subprocess
 import click
 from click.testing import CliRunner
 import os
+import aise_toolkit_demo
+from aise_toolkit_demo.app import app_utiles
 
 @click.group()
 @click.version_option(version='0.3')
@@ -19,8 +21,11 @@ def cli():
 )
 def first_command(example, option):
     "Command description goes here"
-    click.echo("Here is some output")
-
+    click.echo(f"Here is some output: {aise_toolkit_demo.get_message()}")
+    click.echo(f"Here is some output: {aise_toolkit_demo.calculate()}")
+    click.echo(f"Here is some output: {app_utiles.app_get_message()}")
+    click.echo(f"Here is some output: {app_utiles.app_calculate()}")
+    
 @cli.command(name="start_app")
 def start_app():
     """Start the Streamlit app from ./app/app.py"""
